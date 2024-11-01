@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+figure,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+/* Background */
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* Burgermenu */
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  margin-top: -12px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #472237;
+  height: 3px;
+  border-radius: 25px;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 16px;
+  width: 16px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #472237;
+}
+
+/*
+  Sidebar wrapper styles
+  */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #fad6d2;
+  font-size: 1.15em;
+  right: 0;
+  width: 100%;
+}
+
+/* Full width */
+.bm-menu.bm-menu-open .bm-menu-wrap {
+  width: 100%;
+}
+
+.bm-menu.bm-menu-open .bm-overlay {
+  max-width: 100%;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #472237;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 172px;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  text-align: center;
+  font-family: 'Baskervville', serif;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 24px;
+  padding-top: 48px;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100%;
+}
