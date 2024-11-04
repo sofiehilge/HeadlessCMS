@@ -1,48 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { fetchPosts } from '../services/WordpressAPI';
 import Header from '../templates/Header';
-import Background from '../templates/Background';
 import Hero from '../components/Hero';
 
-const Groups = () => {
+function App() {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-      const loadPosts = async () => {
-          setLoading(true);
-          const fetchedPosts = await fetchPosts();
-          setPosts(fetchedPosts);
-          setLoading(false);
-      };
-
-      loadPosts();
+    axios.get(`${process.env.REACT_APP_API_URL}/posts?_embed`)
+      .then((response) => {
+        setPosts(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-
-
   return (
-    <>
-      <Background>
-        <Header />
-        <Hero title='Grupper' />
-        <div className='text-center'>
-          <ul>
-            {posts.map((post) => (
-              <li key={post.id}>
-                <h2>{post.title.rendered}</h2>
-                <div
-                  dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-                />
-              </li>
-            ))}
-          </ul>
+    <div>
+      <Header/>
+      <Hero title='Grupper' />
+      {posts.map((post) => (
+        <div className='flex flex-col text-center' key={post.id}>
+          <h2 className='h2 text-primaryColor'>{post.title.rendered}</h2>
+          {/* Render the featured image if it exists */}
+          {post._embedded && post._embedded['wp:featuredmedia'] && (
+            <img
+            src={post._embedded['wp:featuredmedia'][0].source_url}
+            alt={post.title.rendered}
+            className='mx-auto mb-4'
+            />
+          )}
+          <div className='h3 text-secondaryColor mx-6 text-pretty mt-6' dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
         </div>
-      </Background>
-    </>
+      ))}
+    </div>
   );
-};
+}
 
-export default Groups;
+export default App;

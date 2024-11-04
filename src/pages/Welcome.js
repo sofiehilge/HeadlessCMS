@@ -29,7 +29,7 @@ const Welcome = () => {
         <div className='py-4 text-center'>
           <h2 className='h2  text-primaryColor'>Instagram</h2>
         </div>
-        <img src={instaImage} />
+        <img src={instaImage} alt='instaImage' />
       </section>
 
       <Footer />
