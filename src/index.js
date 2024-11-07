@@ -12,7 +12,7 @@ import Welcome from './pages/Welcome.js';
 import Groups from './pages/Groups.js';
 import Contact from './pages/Contact.js';
 import Errorpage from './pages/Errorpage.js';
-import Loading from './pages/Loading.js';
+/* import Loading from './pages/Loading.js'; */
 import Background from './templates/Background.js';
 
 const router = createBrowserRouter(
