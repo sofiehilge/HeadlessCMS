@@ -3,7 +3,8 @@ import axios from 'axios';
 import Header from '../templates/Header';
 import Hero from '../components/Hero';
 
-function App() {
+
+function Groups() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -38,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+export default Groups;
