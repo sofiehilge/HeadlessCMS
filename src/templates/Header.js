@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Burgermenu from '../components/Burgermenu';
+/* import Burgermenu from '../components/Burgermenu'; */
 import logo from '../assets/Logo/2cropped.png';
 import { CiShoppingCart } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
+import ReactMenu from '../components/ReactMenu';
 
 const Header = () => {
   //making header sticky and change background
@@ -29,7 +30,8 @@ const Header = () => {
       } sticky top-0 z-50 transition-colors duration-300`}
     >
       <div className='w-1/6 flex justify-start pl-6'>
-        <Burgermenu />
+      <ReactMenu/>
+   {/*      <Burgermenu /> */}
       </div>
       <Link to={'/'} className='flex justify-center'>
         <img src={logo} alt='logo' className='mt-0 pt-0 ml-4' />
