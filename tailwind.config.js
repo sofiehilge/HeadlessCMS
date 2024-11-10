@@ -21,6 +21,7 @@ module.exports = {
         primaryColor: "#472237", // Adding custom colors
         secondaryColor: "#52603a",
         lightColor: "#e69d94",
+        backgroundColor: "#FFF8EB",
       },
     },
   },

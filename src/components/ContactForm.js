@@ -24,9 +24,17 @@ const ContactForm = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="email">Email</label>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="bg-backgroundColor p-6 rounded-lg border-secondaryColor space-y-4 mx-4 my-2"
+    >
+      <div>
+        <label
+          htmlFor="email"
+          className="block font-semibold text-secondaryColor"
+        >
+          Email
+        </label>
         <input
           id="email"
           type="email"
@@ -37,28 +45,45 @@ const ContactForm = () => {
               message: 'Ugyldig email',
             },
           })}
+          className="mt-1 w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondaryColor"
           name="email"
         />
-        {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
-
-        <label htmlFor="message">Besked</label>
+        {errors.email && <p className="text-red-400">{errors.email.message}</p>}
+      </div>
+      <div>
+        <label
+          htmlFor="message"
+          className="block font-semibold text-secondaryColor"
+        >
+          Besked
+        </label>
         <textarea
           id="message"
           {...register('message', { required: 'Skriv venligst en besked.' })}
+          className="mt-1 w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondaryColor"
+          rows={5}
           name="message"
         />
-        <input
-          type="text"
-          name="honeypot"
-          style={{ display: 'none' }}
-          {...register('honeypot')}
-        />
+        {errors.message && (
+          <p className="text-red-400 text-sm">Skriv venligst en besked</p>
+        )}
+      </div>
 
-        <button type="submit" disabled={state.submitting}>
-          Send
-        </button>
-      </form>
-    </div>
+      <input
+        type="text"
+        name="honeypot"
+        style={{ display: 'none' }}
+        {...register('honeypot')}
+      />
+
+      <button
+        type="submit"
+        disabled={state.submitting}
+        className="w-full bg-primaryColor text-backgroundColor font-bold py-2 px-4 rounded-lg hover:bg-secondaryColor transition-colors"
+      >
+        Send
+      </button>
+    </form>
   );
 };
 export default ContactForm;
