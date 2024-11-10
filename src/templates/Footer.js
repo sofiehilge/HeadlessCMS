@@ -1,11 +1,11 @@
-import React from "react";
-import { CiInstagram } from "react-icons/ci";
-import { CiFacebook } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { CiInstagram } from 'react-icons/ci';
+import { CiFacebook } from 'react-icons/ci';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className="flex items-center justify-between mx-6 mt-4">
+    <div className="flex items-center justify-between mx-6 mt-4 pb-4">
       <div>
         <Link to="https://www.instagram.com/freeing.the.being/">
           <CiInstagram className="text-secondaryColor text-2xl" />
