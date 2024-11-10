@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function Posts({ category, tag }) {
   const [posts, setPosts] = useState([]);
@@ -19,7 +19,7 @@ function Posts({ category, tag }) {
         setPosts(response.data);
       })
       .catch((error) => {
-        console.error('Error fetching data;', error);
+        console.error("Error fetching data;", error);
       });
   }, [category, tag]);
 
@@ -28,9 +28,9 @@ function Posts({ category, tag }) {
       {posts.map((post) => (
         <div className="flex flex-col text-center" key={post.id}>
           <h2 className="h2 text-primaryColor">{post.title.rendered}</h2>
-          {post._embedded && post._embedded['wp:featuredmedia'] && (
+          {post._embedded && post._embedded["wp:featuredmedia"] && (
             <img
-              src={post._embedded['wp:featuredmedia'][0].source_url}
+              src={post._embedded["wp:featuredmedia"][0].source_url}
               alt={post.title.rendered}
               className="mx-auto mb-4"
             />

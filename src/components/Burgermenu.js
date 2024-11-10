@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { stack as Menu } from 'react-burger-menu';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { stack as Menu } from "react-burger-menu";
 
 const Burgermenu = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -17,14 +17,14 @@ const Burgermenu = () => {
   };
 
   return (
-    <Menu width={'100%'} isOpen={isClicked} onStateChange={handleStateChange}>
-      <Link to='/' onClick={toggleClick}>
+    <Menu width={"100%"} isOpen={isClicked} onStateChange={handleStateChange}>
+      <Link to="/" onClick={toggleClick}>
         Hjem
       </Link>
-      <Link to='/groups' onClick={toggleClick}>
+      <Link to="/groups" onClick={toggleClick}>
         Grupper
       </Link>
-      <Link to='/contact' onClick={toggleClick}>
+      <Link to="/contact" onClick={toggleClick}>
         Kontakt
       </Link>
     </Menu>

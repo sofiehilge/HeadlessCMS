@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,23 +17,23 @@ const BurgerMenu = () => {
       {/* Burger icon button */}
       <div
         className={`absolute top-4 flex flex-col w-8 h-8 justify-center items-center cursor-pointer gap-1 ${
-          isOpen ? 'z-50' : 'z-10'
+          isOpen ? "z-50" : "z-10"
         }`}
         onClick={toggleMenu}
       >
         <span
           className={`block w-8 h-0.5 bg-primaryColor transition-transform duration-300 ${
-            isOpen ? 'transform rotate-45 translate-y-1.5' : ''
+            isOpen ? "transform rotate-45 translate-y-1.5" : ""
           }`}
         ></span>
         <span
           className={`block w-8 h-0.5 bg-primaryColor transition-opacity duration-300 ${
-            isOpen ? 'opacity-0' : ''
+            isOpen ? "opacity-0" : ""
           }`}
         ></span>
         <span
           className={`block w-8 h-0.5 bg-primaryColor transition-transform duration-300 ${
-            isOpen ? 'transform -rotate-45 -translate-y-1.5' : ''
+            isOpen ? "transform -rotate-45 -translate-y-1.5" : ""
           }`}
         ></span>
       </div>
@@ -41,7 +41,7 @@ const BurgerMenu = () => {
       {/* Overlay menu */}
       <div
         className={`fixed inset-0 bg-secondaryColor bg-opacity-80 flex flex-col items-center justify-center space-y-8 transition-transform duration-300 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
+          isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <Link to="/" onClick={closeMenu} className="text-primaryColor text-2xl">
