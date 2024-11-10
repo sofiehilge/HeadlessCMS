@@ -44,7 +44,7 @@ function Posts({ category, tag }) {
         return (
           <div
             key={post.id}
-            className="bg-backgroundColor p-6 rounded-lg shadow-lg text-center"
+            className="bg-backgroundColor p-6 rounded-lg shadow-lg text-center animate-fadeIn"
           >
             <h2 className=" text-primaryColor font-semibold text-xl mb-2">
               {post.title.rendered}

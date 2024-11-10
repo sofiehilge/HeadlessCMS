@@ -1,3 +1,5 @@
+/* BRUGER IKKE DENNE!!!! */
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { stack as Menu } from "react-burger-menu";

@@ -1,0 +1,22 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out;
+}
+.rounded-lg {
+  border-radius: 0.75rem; /* Adjust as needed */
+}
+.text-lg {
+  font-size: 1.125rem; /* Adjust as needed */
+}
+.text-2xl {
+  font-size: 1.5rem; /* Adjust as needed */
+}
