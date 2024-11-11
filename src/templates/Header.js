@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <div
       className={`flex justify-between items-center ${
-        isSticky ? "bg-lightColor" : "bg-transparent"
+        isSticky ? "bg-lightColor bg-opacity-70" : "bg-transparent"
       } sticky top-0 z-50 transition-colors duration-300`}
     >
       <div className="w-1/6 flex justify-start pl-6">
