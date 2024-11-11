@@ -66,6 +66,13 @@ const BurgerMenu = () => {
           Individuel
         </Link>
         <Link
+          to="/store"
+          onClick={closeMenu}
+          className="text-2xl text-primaryColor py-2 px-4  hover:text-secondaryColor transition-colors animate-fadeIn"
+        >
+          Forløb
+        </Link>
+        <Link
           to="/contact"
           onClick={closeMenu}
           className="text-2xl text-primaryColor py-2 px-4  hover:text-secondaryColor transition-colors animate-fadeIn"

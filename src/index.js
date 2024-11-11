@@ -13,6 +13,7 @@ import Welcome from './pages/Welcome.js';
 import Groups from './pages/GroupsPosts.js';
 import Individual from './pages/IndividualPosts.js';
 import Contact from './pages/Contact.js';
+import Store from './pages/Store.js';
 import Errorpage from './pages/Errorpage.js';
 /* import Loading from './pages/Loading.js'; */
 import Background from './templates/Background.js';
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route path="/groups" element={<Groups />} />
       <Route path="/individual" element={<Individual />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/store" element={<Store />} />
       <Route path="/error" element={<Errorpage />} />
     </Route>
   )

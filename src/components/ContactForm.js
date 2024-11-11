@@ -26,7 +26,8 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-backgroundColor p-6 rounded-lg border-secondaryColor space-y-4 mx-4 my-2 animate-fadeIn"
+      noValidate //Disable browsers native validation
+      className="bg-backgroundColor bg-opacity-70 p-6 rounded-lg border-secondaryColor space-y-4 mx-4 my-2 animate-fadeIn"
     >
       <div>
         <label
