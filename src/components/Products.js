@@ -1,31 +1,27 @@
-import React, {useEffect, useState} from "react";
-import { getProducts } from "../services/WoocommmerceApi";
-
+import React, { useEffect, useState } from 'react';
+import { fetchProducts, createOrder } from '../services/WoocommmerceApi';
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const fetchedProducts = await getProducts();
-            setProducts(fetchedProducts);
-        };
-        fetchProducts();
-    }, []);
+  useEffect(() => {
+    const loadProducts = async () => {
+      const data = await fetchProducts();
+      setProducts(data);
+    };
+    loadProducts();
+  }, []);
+
   return (
     <div>
-      <div>
-        {products.map((product) => (
-          <div key={product.id}>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>{product.price} {product.currency}</p>
-            <button>Add to Cart</button>
-          </div>
-        ))}
-      </div>
+      {products.map((product) => (
+        <div key={product.id}>
+          <h2>{product.name}</h2>
+          <p>{product.price}</p>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

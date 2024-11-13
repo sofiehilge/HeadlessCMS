@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-const apiUrl =
-  'https://your-wordpress-site.com/wp-json/wc/v3/'; /* THIS IS NOT THE CORRECT, NEED TO FIX HTTPS FIRST!! */
-
+const apiUrl = '/wp-json/wc/v3';
 const woocommerceApi = axios.create({
   baseURL: apiUrl,
   auth: {
@@ -11,9 +9,9 @@ const woocommerceApi = axios.create({
   },
 });
 
-export const getProducts = async () => {
+export const fetchProducts = async () => {
   try {
-    const response = await woocommerceApi.get('products');
+    const response = await woocommerceApi.get('/products');
     return response.data;
   } catch (error) {
     console.error('Error fetching products:', error);
@@ -23,7 +21,7 @@ export const getProducts = async () => {
 
 export const createOrder = async (orderData) => {
   try {
-    const response = await woocommerceApi.post('orders', orderData);
+    const response = await woocommerceApi.post('/orders', orderData);
     return response.data;
   } catch (error) {
     console.error('Error creating order:', error);

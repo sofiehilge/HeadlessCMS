@@ -1,12 +1,15 @@
 import { Outlet } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
-import "./css/TextAnimation.css"
+import { CartProvider } from './context/CartContext';
+import './css/TextAnimation.css';
 
 function App() {
   return (
     <>
-      <ScrollToTop />
-      <Outlet />
+      <CartProvider>
+        <ScrollToTop />
+        <Outlet />
+      </CartProvider>
     </>
   );
 }
