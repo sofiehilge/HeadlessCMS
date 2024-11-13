@@ -1,7 +1,10 @@
 import React from 'react';
 import { createOrder } from '../services/WoocommmerceApi';
+import {useCart} from '../context/CartContext';
 
 const Cart = () => {
+const {productsInCart} = useCart();//Access productsInCart from context
+
   const handleCheckout = async () => {
     const orderData = {
       payment_method: 'nexi_checkout',

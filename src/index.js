@@ -14,6 +14,7 @@ import Groups from './pages/GroupsPosts.js';
 import Individual from './pages/IndividualPosts.js';
 import Contact from './pages/Contact.js';
 import Store from './pages/Store.js';
+import Checkout from './pages/Checkout.js';
 import Errorpage from './pages/Errorpage.js';
 /* import Loading from './pages/Loading.js'; */
 import Background from './templates/Background.js';
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
       <Route path="/individual" element={<Individual />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/store" element={<Store />} />
+      <Route path="/checkout" element={<Checkout/>} />
       <Route path="/error" element={<Errorpage />} />
     </Route>
   )
