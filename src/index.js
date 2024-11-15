@@ -8,6 +8,7 @@ import {
   RouterProvider,
   Route,
 } from 'react-router-dom';
+
 import Welcome from './pages/Welcome.js';
 /* import Groups from './pages/Groups.js'; */
 import Groups from './pages/GroupsPosts.js';
@@ -18,7 +19,6 @@ import Checkout from './pages/Checkout.js';
 import CookiesPolicy from './pages/CookiesPolicy.js';
 import PrivacyPolicy from './pages/PrivacyPolicy.js';
 import Errorpage from './pages/Errorpage.js';
-/* import Loading from './pages/Loading.js'; */
 import Background from './templates/Background.js';
 
 const router = createBrowserRouter(

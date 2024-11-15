@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Loading from './Loading';
 
 function Posts({ category, tag }) {
   const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [expandedPosts, setExpandedPosts] = useState({});
 
   useEffect(() => {
@@ -23,8 +26,19 @@ function Posts({ category, tag }) {
       })
       .catch((error) => {
         console.error('Error fetching data;', error);
+        setError('Fejl ved indlæsning af data'); // Set an error message
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, [category, tag]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+  if (error) {
+    return <div className="text-center text-red-500">{error}</div>;
+  }
 
   //toggle the expansion of a post
   const toggleExpand = (postId) => {
