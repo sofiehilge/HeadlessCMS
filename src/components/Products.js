@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchProducts, createOrder } from '../services/WoocommmerceApi';
+import { fetchProducts } from '../services/WoocommmerceApi';
 
 const Products = () => {
   const [products, setProducts] = useState([]);

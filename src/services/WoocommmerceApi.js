@@ -1,12 +1,10 @@
 import axios from 'axios';
 
-const apiUrl = '/wp-json/wc/v3'; // !!!! when deploying to production, needs full url like freeingthebeing.com/wp-json/wc/w3
+const apiUrl = 'http://localhost/wordpress/wp-json/wc/v3'; // !!!! when deploying to production, needs full url like freeingthebeing.com/wp-json/wc/w3
 
 const woocommerceApi = axios.create({
-  
   baseURL: apiUrl,
   auth: {
-    
     username: process.env.REACT_APP_CONSUMER_KEY,
     password: process.env.REACT_APP_CONSUMER_SECRET,
   },
