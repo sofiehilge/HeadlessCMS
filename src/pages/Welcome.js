@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../templates/Header';
 import portrait from '../assets/imagecompressor/IMG_0298-min.JPG';
 import image from '../assets/imagecompressor/IMG_8257-min.JPG';
 import instaImage from '../assets/imagecompressor/IMG_8264-min.JPG';
-
+import { useCookies } from 'react-cookie';
 import Hero from '../components/Hero';
 import Footer from '../templates/Footer';
 
 const Welcome = () => {
+  const [cookies, setCookie] = useCookies(['myCookie']);
+  const [cookieValue, setCookieValue] = useState('');
+  const handleSetCookie = () => {
+    setCookie('myCookie', 'cookieValue', { path: '/' });
+  };
+  const handleGetCookie = () => {
+    setCookieValue(cookies.myCookie);
+  };
   return (
     <>
       <Header />
@@ -44,7 +52,11 @@ const Welcome = () => {
           className="rounded-lg mb-6 w-full max-w-md mx-auto"
         />
       </section>
-
+      <section>
+        <button onClick={handleSetCookie}>Set Cookie</button>{' '}
+        <button onClick={handleGetCookie}>Get Cookie</button>{' '}
+        <p>Cookie Value: {cookieValue}</p>
+      </section>
       <Footer />
     </>
   );
