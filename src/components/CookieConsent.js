@@ -30,7 +30,7 @@ const CookieConsentPopup = () => {
       <span className="text-sm md:text-base">
         Vi bruger cookies til at forbedre din oplevelse. Ved at fortsætte med at
         besøge denne side accepterer du vores brug af cookies.
-        <a href="/privacy-policy" className="text-primaryColor underline ml-2">
+        <a href="privacypolicy" className="text-primaryColor underline ml-2">
           Lær mere
         </a>
       </span>

@@ -1,6 +1,6 @@
 import React from 'react';
 import backgroundImage from '../assets/watercolor-alcohol-ink-background/5898436.jpg';
-/* import 'Index.css'; */
+
 
 const Background = ({ children }) => {
   return (
@@ -12,7 +12,7 @@ const Background = ({ children }) => {
         backgroundSize: 'cover',
       }}
     >
-      {/*  <div className="sparkle"></div> */}
+     
       {children}
     </div>
   );
