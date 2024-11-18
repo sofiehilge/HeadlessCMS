@@ -1,26 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../templates/Header';
 import portrait from '../assets/imagecompressor/IMG_0298-min.JPG';
 import image from '../assets/imagecompressor/IMG_8257-min.JPG';
 import instaImage from '../assets/imagecompressor/IMG_8264-min.JPG';
 import { useCookies } from 'react-cookie';
 import Hero from '../components/Hero';
+import NewsletterSignup from '../components/NewsletterSignup';
 import Footer from '../templates/Footer';
 
 const Welcome = () => {
   const [cookies, setCookie] = useCookies(['myCookie']);
   const [cookieValue, setCookieValue] = useState('');
+  const [isNewsLetterOpen, setIsNewsletterOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300 && !cookies.newletterShown) {
+        setIsNewsletterOpen(true);
+        setCookie('newsletterShown', 'true', { path: '/' });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [cookies, setCookie]);
+
   const handleSetCookie = () => {
     setCookie('myCookie', 'cookieValue', { path: '/' });
   };
   const handleGetCookie = () => {
     setCookieValue(cookies.myCookie);
   };
+
   return (
     <>
       <Header />
       <Hero title="Mie Dandanell" />
 
+      <NewsletterSignup
+        isOpen={isNewsLetterOpen}
+        onClose={() => setIsNewsletterOpen(false)}
+      />
       <article className="flex flex-col items-center text-center space-y-4 animate-fadeIn mx-6">
         <img
           src={portrait}
