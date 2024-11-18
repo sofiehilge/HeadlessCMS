@@ -1,10 +1,16 @@
 import React from 'react';
+import { Player } from '@lottiefiles/react-lottie-player';
+import loadingAnimation from '../assets/lottie/Animation - 1731926952908.json';
 
 const Error = () => {
   return (
-    <div>
-      ERROR - lottifile ind her link til hjem hvis fejlen fortsætter så send en
-      besked her..
+    <div className="flex justify-center min-h-screen">
+      <Player
+        autoplay
+        loop
+        src={loadingAnimation}
+        style={{ height: '300px', width: '300px' }}
+      />
     </div>
   );
 };
